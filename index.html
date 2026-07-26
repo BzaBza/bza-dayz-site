@@ -47,6 +47,22 @@
   .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
   .card h3{margin:0 0 6px;font-size:1rem;color:#fff}
   .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .founder{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--panel);border:1px solid var(--line);
+    border-left:4px solid #a056f5;border-radius:8px;padding:18px 20px;
+  }
+  .founder .swatch{
+    flex:none;width:56px;height:56px;border-radius:8px;background:#a056f5;
+    box-shadow:0 0 0 1px rgba(255,255,255,.12), 0 0 22px rgba(160,86,245,.45);
+  }
+  .founder p{margin:0 0 10px}
+  .founder p:last-child{margin:0}
+  .founder code{
+    font:600 .95em ui-monospace,SFMono-Regular,Consolas,monospace;color:#c79bff;
+  }
+  .founder .fine{color:var(--muted);font-size:.9rem}
+  @media (max-width:520px){ .founder{flex-direction:column} }
   .shots{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:16px;margin:0 0 8px;
@@ -150,6 +166,22 @@
       <img src="shots/06-colour.jpg" alt="A bright pink painted rifle held up against a sunlit Chernarus landscape" loading="lazy" width="1600" height="900">
       <figcaption>Camouflage is optional.</figcaption>
     </figure>
+  </div>
+
+  <h2>Founder colour &mdash; first five only</h2>
+  <div class="founder">
+    <div class="swatch" aria-hidden="true"></div>
+    <div>
+      <p><strong>The first five players to complete a full advanced pattern</strong>
+         &mdash; every earned scheme of one of them &mdash; keep an exclusive
+         colour, <code>#A056F5</code>, permanently. Nobody else on the server
+         will ever have it.</p>
+      <p>It works on weapons and armour with the standard patterns, or with no
+         pattern at all. It is not for sale and it never will be: the only way
+         to get it is to be one of the first five to finish the collection.</p>
+      <p class="fine">Progression wipes every 6 weeks. The founder colour does
+         not &mdash; once it is yours, it stays yours across wipes.</p>
+    </div>
   </div>
 
   <h2>Server rhythm</h2>
