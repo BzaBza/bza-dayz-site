@@ -47,6 +47,23 @@
   .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
   .card h3{margin:0 0 6px;font-size:1rem;color:#fff}
   .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .shots{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:16px;margin:0 0 8px;
+  }
+  .shots figure{margin:0}
+  .shots img{
+    display:block;width:100%;height:auto;border-radius:8px;
+    border:1px solid var(--line);background:var(--panel);
+  }
+  .shots figcaption{
+    color:var(--muted);font-size:.88rem;line-height:1.45;margin-top:8px;
+  }
+  /* The first shot carries the section: give it the full width on wide screens
+     so the cans and the painted rifle are actually readable. */
+  @media (min-width:620px){
+    .shots figure:first-child{grid-column:1 / -1}
+  }
   footer{
     margin-top:56px;border-top:1px solid var(--line);
     padding:24px 0 48px;color:var(--muted);font-size:.9rem;
@@ -105,6 +122,35 @@
   <p>Painting is free for every player. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770991635">The mod on the Steam Workshop</a>
      &mdash; you do not need to install it by hand, the launcher pulls it when
      you join.</p>
+
+  <h2>In game</h2>
+  <p>All of this is from the live server. Nothing here is a render or a mockup.</p>
+  <div class="shots">
+    <figure>
+      <img src="shots/01-paint-cans.jpg" alt="Paint cans and an advanced paint kit on the ground next to a painted rifle and helmet" loading="lazy" width="1600" height="900">
+      <figcaption>Cans found in the world. Each one carries its pattern on the label.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/02-painting-menu.jpg" alt="The PaintMod painting menu open on a ballistic vest, showing camo schemes and pattern choices" loading="lazy" width="1600" height="900">
+      <figcaption>Pick a colour, pick a pattern you have learned, apply.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/03-per-part.jpg" alt="Inventory screen showing a KA-M with a pink stock, red receiver and blue handguard" loading="lazy" width="1600" height="900">
+      <figcaption>One rifle, three parts, three separate paint jobs.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/04-striped-rifle.jpg" alt="The same rifle model painted in a black and white stripe pattern, worn with a green pixel loadout" loading="lazy" width="1600" height="900">
+      <figcaption>Same weapon, a pattern instead of flat colour.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/05-loadout.jpg" alt="A survivor in a fully painted winter loadout - jacket, backpack, helmet and rifle all matching" loading="lazy" width="1600" height="900">
+      <figcaption>A matched loadout takes most of a wipe to put together.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/06-colour.jpg" alt="A bright pink painted rifle held up against a sunlit Chernarus landscape" loading="lazy" width="1600" height="900">
+      <figcaption>Camouflage is optional.</figcaption>
+    </figure>
+  </div>
 
   <h2>Server rhythm</h2>
   <ul>
