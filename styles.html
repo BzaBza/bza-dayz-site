@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Colours &amp; patterns - every PaintMod style | BZA Chernarus 1PP</title>
-<meta name="description" content="Every colour, stencil and camo scheme in BZA PaintMod. 47 colours, 5 stencils you can preview in any colour pair, and all 60 advanced camo combinations rendered from the mod's own generator.">
+<meta name="description" content="Every colour, stencil and camo scheme you can get in BZA PaintMod: the free four plus what codes and the founder race hand out, five stencils you can preview in any colour pair, and all 30 advanced camo combinations rendered from the mod's own generator.">
 <link rel="icon" href="assets/brand/logo-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/brand/logo-180.png">
 <link rel="stylesheet" href="assets/site.css">
@@ -38,41 +38,47 @@
 
   <p class="lede">A paint job is one of three things: a flat colour, a
      <strong>stencil</strong> in two colours you pick, or an <strong>advanced camo
-     pattern</strong> in one of twelve fixed colour schemes. Each part of a weapon
+     pattern</strong> in one of six fixed colour schemes. Each part of a weapon
      and each piece of clothing carries its own.</p>
 
   <dl class="facts">
-    <div><dt>Colours</dt><dd>47 <small>&mdash; 4 free</small></dd></div>
+    <div><dt>Colours</dt><dd id="fColours">6</dd></div>
+    <div><dt>Free from the start</dt><dd>4</dd></div>
     <div><dt>Stencils</dt><dd>5 <small>&mdash; 4 to find</small></dd></div>
     <div><dt>Camo patterns</dt><dd>5</dd></div>
-    <div><dt>Camo schemes</dt><dd>12 <small>&mdash; 6 spawn</small></dd></div>
+    <div><dt>Camo schemes</dt><dd>6</dd></div>
     <div><dt>Camo combos</dt><dd>25 <small>to collect</small></dd></div>
-    <div><dt>Stencil pairs built</dt><dd>10 810</dd></div>
   </dl>
 
-  <div class="note">
-    <p><strong>Read those numbers honestly.</strong> The mod contains 47 colours
-       and 60 camo tiles; a fresh character holds <strong>four colours and one
-       stencil</strong>. Everything else is earned &mdash; stencils from cans,
-       camo from the military hunt, extra colours from event codes. The 10&nbsp;810
-       figure is how many two-colour tiles are pre-rendered in the download, not
-       how many you can paint on day one.</p>
-  </div>
-
   <!-- ================================================================ -->
-  <h2 id="colours">The palette &mdash; 47 colours</h2>
-  <p>Four colours are free and always in your palette. The rest are granted:
-     today that means <a href="paintmod.html#promo">promo codes</a> from events
-     and giveaways in Discord, and the founder colour that five players will
-     earn. Colours you do not hold are simply not drawn in the in-game menu, so
-     the grid you see there is always the grid you can use.</p>
+  <h2 id="colours">The palette</h2>
+  <p>Everything below is a colour you can actually have right now. Four come
+     with the game, one is live in Discord as a promo code, and one is the
+     founder colour that five players will earn and nobody else will ever
+     hold.</p>
 
-  <div class="palette" id="palette"></div>
+  <h3>Free &mdash; every player, from the first spawn</h3>
+  <div class="palette" id="paletteFree"></div>
 
-  <p class="muted"><small>Any colour works as a base and any colour works as a
-     stencil accent &mdash; there are no colour-only-solid restrictions. That
-     costs the mod a pre-rendered texture for every base &times; accent pair,
-     which is why the palette grows slowly and deliberately.</small></p>
+  <h3>Promo code &mdash; from Discord</h3>
+  <div class="palette" id="palettePromo"></div>
+  <p class="muted"><small>Press <strong>ESC</strong> in game, type the code into
+     the <strong>PROMO CODE</strong> box under the Discord button, hit REDEEM.
+     The colour is in your palette immediately.
+     <a href="paintmod.html#promo">How promo codes work</a>.</small></p>
+
+  <h3>Founder &mdash; the first five, permanently</h3>
+  <div class="palette" id="paletteFounder"></div>
+  <p class="muted"><small>Earned by being one of the first five players to
+     complete every earned scheme of one advanced pattern. Not for sale, and it
+     survives the wipe. <a href="paintmod.html#founder">The founder race</a>.</small></p>
+
+  <div class="note">
+    <p>Colours you do not hold are not drawn in the in-game menu at all, so the
+       grid you see there is always the grid you can use. Any colour you hold
+       works as a base <em>and</em> as a stencil accent &mdash; nothing is
+       restricted to flat colour only.</p>
+  </div>
 
   <!-- ================================================================ -->
   <h2 id="stencils">Stencils &mdash; you pick both colours</h2>
@@ -98,9 +104,6 @@
   </div>
 
   <div class="tiles" id="stencilTiles"></div>
-  <p class="muted"><small>Only black, olive, forest green and brown are free.
-     Pick anything else above and you are previewing a colour you would have to
-     earn &mdash; the palette grid further up marks which is which.</small></p>
 
   <h3>Tiled, the way it lands on an item</h3>
   <p>A single tile is 256&nbsp;px square and repeats seamlessly across whatever
@@ -119,12 +122,14 @@
   </div>
 
   <!-- ================================================================ -->
-  <h2 id="camo">Advanced camo &mdash; 5 patterns &times; 12 schemes</h2>
+  <h2 id="camo">Advanced camo &mdash; 5 patterns &times; 6 schemes</h2>
   <p>Advanced patterns are multi-colour camouflage. You do not pick their
      colours: each one comes in fixed <strong>schemes</strong> of three or four
      tones, the way real camo does. Picking one in the menu replaces both colour
      grids with a single <em>Camo scheme</em> row. They need an
      <a href="paintmod.html#kits">Advanced Paint Kit</a> to apply.</p>
+  <p>Every one of the thirty tiles below is obtainable. Five come with the
+     Advanced Paint Kit; the other twenty-five are the collection.</p>
   <p>What you collect is the <strong>combination</strong>. A Military Paint Can
      teaches exactly what is printed on its label &mdash; one pattern in one
      scheme. &ldquo;Thicket in Autumn&rdquo; tells you nothing about
@@ -140,11 +145,11 @@
       <select id="schemeFilter">
         <option value="">All schemes</option>
       </select>
-      <label for="obtFilter">Availability</label>
+      <label for="obtFilter">Source</label>
       <select id="obtFilter">
         <option value="">Everything</option>
-        <option value="1">Obtainable now</option>
-        <option value="0">Held back</option>
+        <option value="kit">With the Advanced Kit</option>
+        <option value="can">From Military Paint Cans</option>
       </select>
     </div>
   </div>
@@ -153,12 +158,11 @@
   <div class="tiles" id="camoTiles"></div>
 
   <div class="note">
-    <p><strong>Six of the twelve schemes are obtainable right now:</strong> UA
-       Pixel, Woodland, Autumn, Desert, Urban and Night. UA Pixel comes with the
-       Advanced Paint Kit for all five patterns; the other five are what
-       Military Paint Cans teach &mdash; <strong>25 combinations</strong> make up
-       the collection. The remaining six schemes are built and shipped in the
-       mod but never spawn; they are held back for events and awards.</p>
+    <p><strong>UA Pixel comes with the Advanced Paint Kit</strong> for all five
+       patterns the moment you find one. The other five schemes &mdash;
+       Woodland, Autumn, Desert, Urban and Night &mdash; are what Military Paint
+       Cans teach, one pattern-in-scheme at a time. That is the
+       <strong>25 combinations</strong> that make up the collection.</p>
     <p><strong>Camo density adapts to the item.</strong> Unlike a stencil, each
        advanced pattern ships three tiles &mdash; loose for small gear, tighter
        for garments, tightest for backpacks &mdash; so the camo reads at roughly
@@ -167,7 +171,7 @@
   </div>
 
   <!-- ================================================================ -->
-  <h2 id="schemes">The twelve schemes</h2>
+  <h2 id="schemes">The six schemes</h2>
   <p>Each scheme is a fixed set of tones. The first is the background, the rest
      are the shapes drawn over it.</p>
   <div class="tbl-wrap" tabindex="0" role="region" aria-label="Scrollable table">
@@ -213,7 +217,7 @@
   // first statement and the page would render as a set of empty grids with the
   // controls still sitting there as though they worked. Say so instead.
   if (!D || !D.colors || !S) {
-    var host = document.getElementById('palette');
+    var host = document.getElementById('paletteFree');
     if (host) host.innerHTML = '<p class="muted">The colour data could not be ' +
       'loaded, so the palette and pattern previews on this page are missing. ' +
       'The <a href="paintmod.html">PaintMod guide</a> describes them in words.</p>';
@@ -228,8 +232,10 @@
     { i: 8, name: 'Blotch', note: 'Large organic woodland blobs' },
     { i: 9, name: 'Hex',    note: 'Honeycomb grid tinted from the scheme' }
   ];
-  // PaintMod_Unlocks.PLAYABLE_SCHEME_COUNT - schemes 0-5 spawn, 6-11 do not.
-  var PLAYABLE = 6;
+  // PaintMod_Unlocks.FREE_SCHEME_COUNT - scheme 0 arrives with the Advanced
+  // Paint Kit; everything above it is earned from a Military Paint Can.
+  // (palette.js only carries obtainable schemes, so nothing else needs a gate.)
+  var FREE_SCHEMES = 1;
 
   var esc = function (s) {
     return String(s).replace(/[&<>"]/g, function (c) {
@@ -238,21 +244,55 @@
   };
 
   // ------------------------------------------------------------- palette ---
-  var TIER_LABEL = { base: 'Free', founder: 'Founder', granted: 'Granted' };
-  var TIER_CLASS = { base: 'free', founder: 'founder', granted: 'locked' };
+  // palette.js only carries obtainable colours, so there is no filtering to do
+  // here - just sort them into the three ways of getting one.
+  var TIER_CLASS = { base: 'free', promo: 'free', founder: 'founder' };
 
-  document.getElementById('palette').innerHTML = D.colors.map(function (c) {
+  function swatch(c) {
+    var badge = c.tier === 'base' ? 'Free'
+              : c.tier === 'promo' ? esc(c.code)
+              : 'Founder';
     return '<div class="sw' + (c.tier === 'founder' ? ' is-founder' : '') + '">' +
       '<span class="chip" style="background:' + c.hex + '"></span>' +
       '<span class="meta">' +
         '<span class="nm">' + esc(c.name) + '</span>' +
         '<span class="hx">' + c.hex + '</span> ' +
-        '<span class="badge ' + TIER_CLASS[c.tier] + '">' + TIER_LABEL[c.tier] + '</span>' +
+        '<span class="badge ' + TIER_CLASS[c.tier] + '">' + badge + '</span>' +
       '</span></div>';
-  }).join('');
+  }
+
+  // tier -> the block it belongs in. Spelled out rather than derived from the
+  // tier name: the free tier is called "base" in the data and "Free" on the
+  // page, and deriving one from the other silently rendered nothing.
+  var TIER_HOST = { base: 'paletteFree', promo: 'palettePromo', founder: 'paletteFounder' };
+
+  Object.keys(TIER_HOST).forEach(function (tier) {
+    var host = document.getElementById(TIER_HOST[tier]);
+    if (!host) return;
+    var list = D.colors.filter(function (c) { return c.tier === tier; });
+    host.innerHTML = list.map(swatch).join('');
+    // A campaign can end, so the promo block hides itself rather than sitting
+    // there empty with a heading over it.
+    if (!list.length && host.previousElementSibling)
+      host.previousElementSibling.style.display = host.style.display = 'none';
+  });
+
+  var fc = document.getElementById('fColours');
+  if (fc) fc.textContent = D.colors.length;
 
   // ------------------------------------------------------------ stencils ---
-  var base = 0, accent = 5; // black on white reads clearly as a default
+  // State is the PALETTE index (0, 1, 3, 14, 31...), not a position in the
+  // array: palette.js only carries obtainable colours, so the two stopped
+  // matching the moment the held-back ones were dropped.
+  function byIndex(i) {
+    for (var k = 0; k < D.colors.length; k++) if (D.colors[k].i === i) return D.colors[k];
+    return D.colors[0];
+  }
+  var freeOnes = D.colors.filter(function (c) { return c.tier === 'base'; });
+  // Default to a pair every player owns on their first spawn, so the preview
+  // opens on something a visitor could actually paint today.
+  var base = freeOnes[0] ? freeOnes[0].i : D.colors[0].i;
+  var accent = freeOnes[1] ? freeOnes[1].i : D.colors[D.colors.length - 1].i;
 
   function swatchButtons(hostId, get, set) {
     var host = document.getElementById(hostId);
@@ -325,7 +365,7 @@
       btn.style.cursor = same ? 'not-allowed' : '';
     });
 
-    var b = D.colors[base], a = D.colors[accent];
+    var b = byIndex(base), a = byIndex(accent);
     document.getElementById('baseName').textContent = b.name + ' ' + b.hex;
     document.getElementById('accName').textContent = a.name + ' ' + a.hex;
     document.documentElement.style.setProperty('--sb', b.hex);
@@ -346,11 +386,13 @@
     patSel.insertAdjacentHTML('beforeend', '<option value="' + p.i + '">' + esc(p.name) + '</option>');
   });
   D.schemes.forEach(function (s) {
-    schSel.insertAdjacentHTML('beforeend', '<option value="' + s.i + '">' + esc(s.name) +
-      (s.i < PLAYABLE ? '' : ' (held back)') + '</option>');
+    schSel.insertAdjacentHTML('beforeend',
+      '<option value="' + s.i + '">' + esc(s.name) + '</option>');
   });
 
   function pad2(n) { return (n < 10 ? '0' : '') + n; }
+
+  var TOTAL = CAMO.length * D.schemes.length;
 
   function renderCamo() {
     var fp = patSel.value, fs = schSel.value, fo = obtSel.value;
@@ -359,22 +401,21 @@
       if (fp && +fp !== p.i) return;
       D.schemes.forEach(function (s) {
         if (fs && +fs !== s.i) return;
-        var obtainable = s.i < PLAYABLE;
-        if (fo === '1' && !obtainable) return;
-        if (fo === '0' && obtainable) return;
-        // Scheme 0 ships with the Advanced Paint Kit for every pattern; 1-5 are
-        // the ones a Military Paint Can teaches, one combination at a time.
-        var how = s.i === 0 ? 'With the kit' : (obtainable ? 'From a can' : 'Held back');
+        // Scheme 0 ships with the Advanced Paint Kit for every pattern; the
+        // rest are what a Military Paint Can teaches, one combination at a time.
+        var fromKit = s.i < FREE_SCHEMES;
+        if (fo === 'kit' && !fromKit) return;
+        if (fo === 'can' && fromKit) return;
         out.push('<div class="tile">' +
           '<img src="assets/camo/p' + p.i + '_w' + pad2(s.i) + '.png" width="256" height="256" loading="lazy"' +
           ' alt="' + esc(p.name + ' pattern in the ' + s.name + ' scheme') + '">' +
           '<span class="cap"><b>' + esc(p.name + ' - ' + s.name) + '</b>' +
-          '<span>' + how + '</span></span></div>');
+          '<span>' + (fromKit ? 'With the kit' : 'From a can') + '</span></span></div>');
       });
     });
     camoHost.innerHTML = out.join('');
     document.getElementById('camoCount').textContent = out.length
-      ? 'Showing ' + out.length + ' of 60 camo tiles.'
+      ? 'Showing ' + out.length + ' of ' + TOTAL + ' camo tiles.'
       : 'Nothing matches that combination.';
   }
   [patSel, schSel, obtSel].forEach(function (el) { el.addEventListener('change', renderCamo); });
@@ -392,9 +433,8 @@
     }).join(' ');
     return '<tr><td>' + s.i + '</td><td><strong>' + esc(s.name) + '</strong></td>' +
            '<td>' + chips + '</td><td>' +
-           (s.i === 0 ? '<span class="badge free">With the kit</span>'
-                      : s.i < PLAYABLE ? '<span class="badge">From cans</span>'
-                                       : '<span class="badge locked">Held back</span>') +
+           (s.i < FREE_SCHEMES ? '<span class="badge free">With the kit</span>'
+                               : '<span class="badge">From cans</span>') +
            '</td></tr>';
   }).join('');
 })();
