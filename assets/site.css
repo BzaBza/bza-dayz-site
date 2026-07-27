@@ -1,0 +1,394 @@
+/* [EU] BZA Chernarus 1PP - shared styles.
+   Kept as one hand-written stylesheet on purpose: the site is static files on
+   GitHub Pages with no build step, so anything that needs compiling is a
+   liability the next time somebody edits a page in a hurry. */
+
+:root {
+  --bg: #14150f;
+  --bg-2: #191a12;
+  --panel: #1c1e16;
+  --panel-2: #22251a;
+  --line: #2f3326;
+  --line-2: #3d422f;
+  --ink: #e8e6dc;
+  /* --muted is 6.6:1 on --bg, --dim is 5.0:1 on --panel. Both clear WCAG AA for
+     normal text, which matters because --dim carries the hex labels under the
+     colour swatches at 0.72rem - the smallest real text on the site. */
+  --muted: #9a9c8c;
+  --dim: #8b8e80;
+  --accent: #c8b560;
+  --accent-dim: #8a7c3e;
+  --accent-2: #e2d08a;
+  --yes: #7cb342;
+  /* --no and --founder-ink are the TEXT weights (5.0:1 and 7.7:1). --founder is
+     the brand violet #A056F5 itself - correct on a swatch or a border, too dark
+     against a panel to set small text in. */
+  --no: #c76b60;
+  --founder: #a056f5;
+  --founder-ink: #c79bff;
+  --radius: 8px;
+  --wrap: 960px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+/* The nav is sticky, so an anchor jump would otherwise park its target
+   underneath it - 57px of nav on desktop, 136px once six links wrap on a
+   phone, which is more than a heading is tall. Every deep link between the
+   guide pages depends on this. */
+[id] { scroll-margin-top: 150px; }
+@media (min-width: 700px) { [id] { scroll-margin-top: 72px; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+.wrap-narrow { max-width: 760px; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+a:hover { color: var(--accent-2); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ---------------------------------------------------------------- skip link */
+
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--accent); color: #14150f; padding: 10px 16px; border: 0;
+}
+.skip:focus { left: 8px; top: 8px; }
+
+/* ---------------------------------------------------------------------- nav */
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(20, 21, 15, .93);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-in {
+  max-width: var(--wrap); margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; gap: 6px 18px; flex-wrap: wrap;
+  min-height: 56px;
+}
+.brand {
+  display: flex; align-items: center; gap: 9px;
+  font-weight: 700; letter-spacing: .04em; color: var(--ink);
+  border: 0; margin-right: auto; padding: 8px 0;
+}
+.brand img { width: 26px; height: 26px; border-radius: 5px; }
+.brand span { color: var(--accent); }
+.nav a.link {
+  border: 0; color: var(--muted); font-size: .93rem; padding: 8px 0;
+  letter-spacing: .02em; white-space: nowrap;
+}
+.nav a.link:hover { color: var(--ink); }
+.nav a.link[aria-current="page"] {
+  color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* ------------------------------------------------------------------- header */
+
+.hero {
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #1b1d15, var(--bg));
+  padding: 52px 0 40px;
+}
+.hero.slim { padding: 40px 0 30px; }
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.55rem, 4.6vw, 2.3rem);
+  line-height: 1.2; letter-spacing: .4px;
+}
+h1 .eu { color: var(--accent); }
+.tag { color: var(--muted); margin: 0; font-size: 1.02rem; }
+.lede { font-size: 1.08rem; color: var(--ink); max-width: 62ch; }
+
+h2 {
+  font-size: 1.08rem; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--accent); margin: 46px 0 14px;
+}
+h3 { margin: 26px 0 8px; font-size: 1.04rem; color: #fff; }
+h4 { margin: 20px 0 6px; font-size: .95rem; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 7px; }
+li > ul, li > ol { margin-top: 7px; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+code {
+  font: 600 .92em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--panel-2); border: 1px solid var(--line);
+  padding: 1px 5px; border-radius: 4px; color: var(--accent-2);
+}
+strong { color: #fff; }
+small { color: var(--muted); font-size: .88rem; }
+
+/* -------------------------------------------------------------- connect box */
+
+.connect {
+  margin: 26px 0 0; padding: 18px 20px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center;
+}
+.connect .label {
+  color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .11em;
+}
+.ip {
+  font: 600 1.3rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #fff; margin-top: 3px; word-break: break-all;
+}
+
+/* ------------------------------------------------------------------ buttons */
+
+.btn {
+  display: inline-block; border: 1px solid var(--accent-dim); border-radius: 6px;
+  padding: 10px 20px; font-weight: 600; font-size: .95rem;
+  background: transparent; color: var(--accent); cursor: pointer;
+}
+.btn:hover { background: rgba(200, 181, 96, .1); color: var(--accent-2); }
+.btn-primary { background: var(--accent); color: #14150f; border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-2); color: #14150f; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
+
+/* -------------------------------------------------------------------- cards */
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 0 0 8px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1rem; color: #fff; }
+.card p:last-child { margin: 0; }
+.card p { color: var(--muted); font-size: .94rem; }
+
+/* facts strip */
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden; margin: 24px 0;
+}
+.facts div { background: var(--panel); padding: 13px 15px; }
+.facts dt { color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; }
+.facts dd { margin: 3px 0 0; font-weight: 600; color: #fff; font-size: .97rem; }
+
+/* ------------------------------------------------------------------- tables */
+
+/* tabindex="0" in the markup makes these keyboard-scrollable - without it the
+   right-hand columns of a table wider than the phone are simply unreachable
+   without a pointer. The focus ring is what tells you it took focus. */
+.tbl-wrap { overflow-x: auto; margin: 0 0 18px; -webkit-overflow-scrolling: touch; }
+.tbl-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .94rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th {
+  color: var(--accent); font-size: .76rem; text-transform: uppercase;
+  letter-spacing: .09em; border-bottom-color: var(--line-2);
+}
+tbody tr:hover { background: var(--panel); }
+/* Group headings inside a tbody (the weapon table's category rows) - without
+   this they inherit body-cell styling and read as just another weapon. */
+tbody th[colspan] {
+  color: var(--accent); font-size: .76rem; text-transform: uppercase;
+  letter-spacing: .09em; padding-top: 22px; border-bottom-color: var(--line-2);
+}
+td.yes { color: var(--yes); font-weight: 600; white-space: nowrap; }
+td.no { color: var(--no); font-weight: 600; white-space: nowrap; }
+
+/* -------------------------------------------------------------------- notes */
+
+.note {
+  background: var(--panel); border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-dim);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 18px; margin: 20px 0;
+}
+.note p:last-child { margin: 0; }
+.note.warn { border-left-color: var(--no); }
+
+/* -------------------------------------------------------------------- steps */
+
+.steps { counter-reset: step; list-style: none; padding: 0; margin: 20px 0; }
+.steps > li {
+  counter-increment: step; position: relative;
+  padding: 0 0 20px 46px; margin: 0; border-left: 1px solid var(--line);
+}
+.steps > li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.steps > li::before {
+  content: counter(step);
+  position: absolute; left: -15px; top: -2px;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--panel-2); border: 1px solid var(--line-2);
+  color: var(--accent); font-weight: 700; font-size: .88rem;
+  display: grid; place-items: center;
+}
+.steps h3 { margin: 2px 0 6px; }
+
+/* ------------------------------------------------------------------- shots */
+
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin: 0 0 8px; }
+.shots figure { margin: 0; }
+.shots img {
+  display: block; width: 100%; border-radius: var(--radius);
+  border: 1px solid var(--line); background: var(--panel);
+}
+.shots figcaption { color: var(--muted); font-size: .88rem; line-height: 1.45; margin-top: 8px; }
+.shots .wide { grid-column: 1 / -1; }
+
+/* ------------------------------------------------------------------ founder */
+
+.founder {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--line);
+  border-left: 4px solid var(--founder); border-radius: var(--radius); padding: 18px 20px;
+}
+.founder .swatch {
+  flex: none; width: 52px; height: 52px; border-radius: var(--radius); background: var(--founder);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 0 22px rgba(160, 86, 245, .45);
+}
+.founder p:last-child { margin: 0; }
+@media (max-width: 520px) { .founder { flex-direction: column; } }
+
+/* ------------------------------------------------------------- paint swatch */
+
+.palette {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 10px; margin: 18px 0;
+}
+.sw {
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+  background: var(--panel);
+}
+.sw .chip { height: 56px; display: block; }
+.sw .meta { padding: 6px 8px 8px; }
+.sw .nm { font-size: .82rem; color: var(--ink); display: block; line-height: 1.3; }
+.sw .hx {
+  font: .72rem ui-monospace, Consolas, monospace; color: var(--dim);
+  text-transform: uppercase; letter-spacing: .03em;
+}
+.sw.is-founder { border-color: var(--founder); }
+
+.badge {
+  display: inline-block; font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .08em; padding: 1px 6px; border-radius: 3px;
+  border: 1px solid var(--line-2); color: var(--muted); vertical-align: 2px;
+}
+.badge.free { color: var(--yes); border-color: rgba(124, 179, 66, .45); }
+.badge.founder { color: var(--founder-ink); border-color: rgba(160, 86, 245, .5); }
+.badge.locked { color: var(--muted); }
+
+/* -------------------------------------------------------------- pattern grid */
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; margin: 18px 0; }
+.tile { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--panel); }
+.tile img, .tile svg { display: block; width: 100%; aspect-ratio: 1; image-rendering: auto; }
+.tile .cap { padding: 8px 10px 10px; }
+.tile .cap b { display: block; font-size: .88rem; color: #fff; font-weight: 600; }
+.tile .cap span { font-size: .78rem; color: var(--muted); }
+
+/* the stencil previews recolour through these two variables */
+.stencil .bg { fill: var(--sb, #1a1a1a); }
+.stencil .ac { fill: var(--sa, #f2f2f2); }
+
+/* ----------------------------------------------------------------- controls */
+
+.controls {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px; margin: 18px 0 24px;
+}
+.controls .row { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; margin-bottom: 12px; }
+.controls .row:last-child { margin-bottom: 0; }
+.controls label, .controls .label-ish {
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted);
+}
+select, input[type="search"] {
+  background: var(--panel-2); color: var(--ink);
+  /* --line-2 against --panel is only 1.6:1, so the box that identifies the
+     control would not be perceivable. --dim clears the 3:1 that WCAG asks of a
+     UI boundary. */
+  border: 1px solid var(--dim); border-radius: 5px;
+  /* 16px exactly: iOS Safari zooms the whole page when a smaller input takes
+     focus, and the visitor then has to pinch back out to read the results they
+     just filtered. */
+  padding: 8px 10px; font: inherit; font-size: 16px; max-width: 100%;
+}
+::placeholder { color: var(--muted); opacity: 1; }
+.mini {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+.mini button {
+  width: 26px; height: 26px; border-radius: 4px; padding: 0;
+  border: 1px solid var(--line-2); cursor: pointer;
+}
+/* 47 swatches at a 44px tap target would be a wall. On touch devices they go up
+   to 38px and the gap widens, which is the most a grid this size can give
+   without becoming its own screen. */
+@media (pointer: coarse) {
+  .mini { gap: 8px; }
+  .mini button { width: 38px; height: 38px; }
+}
+/* Selection ring sits just off the swatch, separated by a band of page colour
+   so it reads on light and dark swatches alike. */
+.mini button[aria-pressed="true"] {
+  box-shadow: 0 0 0 2px var(--panel), 0 0 0 4px var(--accent);
+  border-color: var(--accent);
+}
+/* Focus has to be told apart from selection, and the default accent ring is
+   invisible on the gold family (Amber measures 1.00:1 against it). A white ring
+   further out lands on the panel behind the swatch, never on the swatch, so it
+   is 6:1 whatever colour is under it. */
+.mini button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 5px;
+}
+
+/* ------------------------------------------------------------------ details */
+
+details {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel); padding: 0; margin: 0 0 10px;
+}
+summary { padding: 13px 18px; cursor: pointer; font-weight: 600; color: var(--ink); }
+summary::marker { color: var(--accent); }
+details > *:not(summary) { padding: 0 18px; }
+details > *:last-child { padding-bottom: 14px; }
+
+/* ------------------------------------------------------------------- footer */
+
+footer {
+  margin-top: 60px; border-top: 1px solid var(--line);
+  padding: 26px 0 48px; color: var(--muted); font-size: .9rem;
+}
+/* Footer links keep an underline. Against the muted footer text the accent is
+   only 1.36:1, so colour alone would not distinguish a link from a word. */
+footer a { border-bottom-color: var(--accent-dim); }
+footer .links a { margin-right: 18px; display: inline-block; padding: 4px 0; }
+footer p { margin: 0 0 8px; }
+/* Same spacing for a link row inside the page body, not just the footer. */
+p.links a { margin-right: 18px; display: inline-block; }
+
+/* -------------------------------------------------------------------- misc */
+
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.mt0 { margin-top: 0; }
+.nowrap { white-space: nowrap; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}

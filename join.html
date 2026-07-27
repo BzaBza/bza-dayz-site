@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to join - BZA Chernarus 1PP</title>
+<meta name="description" content="Connect to BZA Chernarus 1PP: direct connect IP, the DZSA Launcher route, which mods load automatically, and what to do if the server kicks you for a version mismatch.">
+<link rel="icon" href="assets/brand/logo-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/brand/logo-180.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/brand/logo-64.png" alt="" width="28" height="28">BZA <span>Chernarus 1PP</span></a>
+    <a class="link" href="index.html">Home</a>
+    <a class="link" href="about.html">About</a>
+    <a class="link" href="paintmod.html">PaintMod guide</a>
+    <a class="link" href="styles.html">Colours &amp; patterns</a>
+    <a class="link" href="gear.html">Weapons &amp; gear</a>
+    <a class="link" href="join.html" aria-current="page">How to join</a>
+  </div>
+</nav>
+
+<header class="hero slim">
+  <div class="wrap">
+    <h1>How to join</h1>
+    <p class="tag">You need DayZ. You do not need to install anything by hand
+       &mdash; the mods come down with the connection.</p>
+    <div class="connect">
+      <div>
+        <div class="label">Direct connect</div>
+        <div class="ip">57.128.250.248:2302</div>
+      </div>
+      <div>
+        <div class="label">Server name</div>
+        <div class="ip" style="font-size:.85rem">[EU] BZA Chernarus 1PP | Vanilla+ | PaintMod</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="wrap">
+
+  <div class="note" style="border-left-color:var(--accent)">
+    <p><strong>Launch Night is Friday 31 July, 19:30 CEST</strong> (20:30 Kyiv,
+       17:30 UTC). You can join today &mdash; the server is live &mdash; but if
+       you want a full map and an even start on the
+       <a href="paintmod.html#founder">founder race</a>, that is the evening.</p>
+  </div>
+
+  <h2>The quickest way</h2>
+  <ol class="steps">
+    <li>
+      <h3>Open the DayZ launcher</h3>
+      <p>The one Steam opens when you press Play on DayZ.</p>
+    </li>
+    <li>
+      <h3>Servers &rarr; Direct connect</h3>
+      <p>Enter <code>57.128.250.248</code> and port <code>2302</code>.</p>
+    </li>
+    <li>
+      <h3>Let it download the mods</h3>
+      <p>The launcher subscribes you to what the server runs and starts the game.
+         First time is about 150&nbsp;MB, nearly all of it PaintMod's textures.
+         After that it only pulls updates.</p>
+    </li>
+  </ol>
+
+  <p>You can also find us in the in-game server browser. The full name in the
+     list is <strong>[EU] BZA Chernarus 1PP | Vanilla+ | PaintMod</strong>;
+     typing <code>BZA Chernarus</code> into the name filter is enough to find
+     it. Same in the <strong>DZSA Launcher</strong>, which most modded-server
+     players already have.</p>
+
+  <div class="note">
+    <p><strong>First person only.</strong> This is a 1PP server: third person is
+       off. If you have never played 1PP, give it three sessions &mdash; it is a
+       different game, and it is the reason people play Chernarus this way.</p>
+  </div>
+
+  <h2>What loads with you</h2>
+  <p>All five are pulled automatically. Only PaintMod adds anything to the world
+     &mdash; its paint kits and pattern cans spawn as loot alongside the vanilla
+     items. No vanilla loot table, weapon or armour stat is touched: paint is
+     cosmetic.</p>
+  <div class="tbl-wrap" tabindex="0" role="region" aria-label="Scrollable table">
+    <table>
+      <thead><tr><th>Mod</th><th>What it is for</th></tr></thead>
+      <tbody>
+        <tr><td><strong>BZA PaintMod</strong></td><td>Our own mod &mdash; weapon and gear painting. <a href="paintmod.html">Guide</a>.</td></tr>
+        <tr><td><strong>Community Framework (CF)</strong></td><td>A shared library other mods build on. No gameplay of its own.</td></tr>
+        <tr><td><strong>Autorun Upgraded</strong></td><td>Numpad&nbsp;<code>+</code> to auto-run. Stamina drains exactly as normal.</td></tr>
+        <tr><td><strong>Ear Plugs</strong></td><td>Turns the volume down in-game, for voice chat over loud engines.</td></tr>
+        <tr><td><strong>VPPAdminTools</strong></td><td>Admin tooling. Players have no access to it.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>If something goes wrong</h2>
+
+  <details>
+    <summary>The server kicked me right after connecting</summary>
+    <p>Almost always a version mismatch. The server checks that your PaintMod
+       build matches its own and kicks anything else &mdash; otherwise you would
+       see paint that is not there. <strong>Restart the DayZ Launcher</strong> so
+       it picks up the mod update, then reconnect. We announce updates in Discord
+       before they go out.</p>
+  </details>
+
+  <details>
+    <summary>The Paint action does not appear on an item</summary>
+    <p>Either that item is excluded by design, or the vanilla model has no
+       paintable texture zone. <a href="gear.html">The full list is on the
+       weapons and gear page</a>.</p>
+  </details>
+
+  <details>
+    <summary>I painted something and nobody else can see it</summary>
+    <p>Paint is applied and validated server-side and synced to everyone, so this
+       should not happen. If it does, report it in <code>#bug-reports</code> with
+       the item and roughly when &mdash; that is exactly the kind of thing we
+       want to hear about.</p>
+  </details>
+
+  <details>
+    <summary>I loaded PaintMod on another server and painting does nothing</summary>
+    <p>Expected. The mod on the Workshop is only the client half; the part that
+       validates and applies paint is private and runs only here.</p>
+  </details>
+
+  <details>
+    <summary>Why is PaintMod 150 MB?</summary>
+    <p>Because a stencil is a two-colour texture and there are 47 colours, so
+       the mod ships a pre-rendered tile for every base &times; accent pair
+       &mdash; 10&nbsp;810 of them, plus the camo tiles. That is the price of
+       letting you pick both colours freely instead of offering a fixed dozen.
+       It downloads once and updates incrementally after that.</p>
+  </details>
+
+  <h2>Before your first session</h2>
+  <ul>
+    <li><strong>Join the Discord.</strong> Restart warnings, wipe dates and promo
+        codes go there and nowhere else.</li>
+    <li><strong>Time your login.</strong> Restarts are at 02:00, 08:00, 14:00 and
+        20:00 Kyiv time &mdash; 01:00, 07:00, 13:00 and 19:00 CEST. Town loot
+        carries over, so this is not a fresh-loot window; what re-rolls are the
+        four <a href="paintmod.html#caches">paint caches</a> at 70% each. That
+        is the run worth timing.</li>
+    <li><strong>Read the rules</strong> &mdash; they are short and they are on the
+        <a href="about.html#rules">about page</a>.</li>
+    <li><strong>Read the cans before you carry them.</strong> A tin can wears
+        what it teaches, so the label tells you whether it is worth a slot.
+        Opening one for something you already know says <em>ALREADY KNOWN</em>
+        and is consumed with nothing gained &mdash; and since every player
+        starts knowing Stripes&nbsp;|, duplicates turn up from the first can.</li>
+  </ul>
+
+  <div class="btns">
+    <a class="btn btn-primary" href="https://discord.gg/Rrzu4rVy3v">Join the Discord</a>
+    <a class="btn" href="paintmod.html">Read the PaintMod guide</a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>[EU] BZA Chernarus 1PP &middot; 57.128.250.248:2302 &middot;
+       <a href="https://discord.gg/Rrzu4rVy3v">Discord</a> &middot;
+       <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770991635">Workshop</a></p>
+    <p class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="paintmod.html">PaintMod guide</a>
+      <a href="styles.html">Colours &amp; patterns</a>
+      <a href="gear.html">Weapons &amp; gear</a>
+    </p>
+    <p><small>Not affiliated with Bohemia Interactive.</small></p>
+  </div>
+</footer>
+
+</body>
+</html>

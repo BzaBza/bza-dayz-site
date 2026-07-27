@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colours &amp; patterns - every PaintMod style | BZA Chernarus 1PP</title>
+<meta name="description" content="Every colour, stencil and camo scheme in BZA PaintMod. 47 colours, 5 stencils you can preview in any colour pair, and all 60 advanced camo combinations rendered from the mod's own generator.">
+<link rel="icon" href="assets/brand/logo-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/brand/logo-180.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/brand/logo-64.png" alt="" width="28" height="28">BZA <span>Chernarus 1PP</span></a>
+    <a class="link" href="index.html">Home</a>
+    <a class="link" href="about.html">About</a>
+    <a class="link" href="paintmod.html">PaintMod guide</a>
+    <a class="link" href="styles.html" aria-current="page">Colours &amp; patterns</a>
+    <a class="link" href="gear.html">Weapons &amp; gear</a>
+    <a class="link" href="join.html">How to join</a>
+  </div>
+</nav>
+
+<header class="hero slim">
+  <div class="wrap">
+    <h1>Every colour and pattern</h1>
+    <p class="tag">All of it drawn by the same generator that builds the textures
+       the game ships. Nothing on this page is an artist's impression.</p>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="wrap">
+
+  <p class="lede">A paint job is one of three things: a flat colour, a
+     <strong>stencil</strong> in two colours you pick, or an <strong>advanced camo
+     pattern</strong> in one of twelve fixed colour schemes. Each part of a weapon
+     and each piece of clothing carries its own.</p>
+
+  <dl class="facts">
+    <div><dt>Colours</dt><dd>47 <small>&mdash; 4 free</small></dd></div>
+    <div><dt>Stencils</dt><dd>5 <small>&mdash; 4 to find</small></dd></div>
+    <div><dt>Camo patterns</dt><dd>5</dd></div>
+    <div><dt>Camo schemes</dt><dd>12 <small>&mdash; 6 spawn</small></dd></div>
+    <div><dt>Camo combos</dt><dd>25 <small>to collect</small></dd></div>
+    <div><dt>Stencil pairs built</dt><dd>10 810</dd></div>
+  </dl>
+
+  <div class="note">
+    <p><strong>Read those numbers honestly.</strong> The mod contains 47 colours
+       and 60 camo tiles; a fresh character holds <strong>four colours and one
+       stencil</strong>. Everything else is earned &mdash; stencils from cans,
+       camo from the military hunt, extra colours from event codes. The 10&nbsp;810
+       figure is how many two-colour tiles are pre-rendered in the download, not
+       how many you can paint on day one.</p>
+  </div>
+
+  <!-- ================================================================ -->
+  <h2 id="colours">The palette &mdash; 47 colours</h2>
+  <p>Four colours are free and always in your palette. The rest are granted:
+     today that means <a href="paintmod.html#promo">promo codes</a> from events
+     and giveaways in Discord, and the founder colour that five players will
+     earn. Colours you do not hold are simply not drawn in the in-game menu, so
+     the grid you see there is always the grid you can use.</p>
+
+  <div class="palette" id="palette"></div>
+
+  <p class="muted"><small>Any colour works as a base and any colour works as a
+     stencil accent &mdash; there are no colour-only-solid restrictions. That
+     costs the mod a pre-rendered texture for every base &times; accent pair,
+     which is why the palette grows slowly and deliberately.</small></p>
+
+  <!-- ================================================================ -->
+  <h2 id="stencils">Stencils &mdash; you pick both colours</h2>
+  <p>Five stencils, learned one at a time from Pattern Paint Cans. Every player
+     starts knowing <strong>Stripes |</strong>; the other four are found in
+     industrial loot and stay yours for the rest of the wipe. The in-game menu
+     files them under <em>Basic patterns &mdash; learned from cans</em>.</p>
+  <p>Pick a base and an accent below and the five previews redraw. These are the
+     real tiles &mdash; same geometry, same random seeds as the textures on your
+     jacket.</p>
+
+  <div class="controls">
+    <div class="row">
+      <span class="label-ish" id="baseLbl">Base colour</span>
+      <strong id="baseName" class="nowrap">Black</strong>
+    </div>
+    <div class="row"><div class="mini" id="baseGrid" role="group" aria-labelledby="baseLbl"></div></div>
+    <div class="row">
+      <span class="label-ish" id="accLbl">Accent colour</span>
+      <strong id="accName" class="nowrap">White</strong>
+    </div>
+    <div class="row"><div class="mini" id="accGrid" role="group" aria-labelledby="accLbl"></div></div>
+  </div>
+
+  <div class="tiles" id="stencilTiles"></div>
+  <p class="muted"><small>Only black, olive, forest green and brown are free.
+     Pick anything else above and you are previewing a colour you would have to
+     earn &mdash; the palette grid further up marks which is which.</small></p>
+
+  <h3>Tiled, the way it lands on an item</h3>
+  <p>A single tile is 256&nbsp;px square and repeats seamlessly across whatever
+     it is painted on. Pick a stencil above to see it repeated &mdash; closer to
+     what you actually get on a backpack. Showing:
+     <strong id="bigName">Checker</strong>.</p>
+  <div id="stencilBig" style="border:1px solid var(--line);border-radius:8px;overflow:hidden"></div>
+
+  <div class="note">
+    <p><strong>A stencil is one fixed tile.</strong> The same 256&nbsp;px tile
+       goes on a balaclava, a jacket and a backpack, so a stencil comes out
+       bigger or smaller depending on how that item's UV stretches it. Only the
+       <a href="#camo">advanced camo patterns</a> ship in three densities the
+       item picks for itself &mdash;
+       <a href="gear.html#density">how the tiers work</a>.</p>
+  </div>
+
+  <!-- ================================================================ -->
+  <h2 id="camo">Advanced camo &mdash; 5 patterns &times; 12 schemes</h2>
+  <p>Advanced patterns are multi-colour camouflage. You do not pick their
+     colours: each one comes in fixed <strong>schemes</strong> of three or four
+     tones, the way real camo does. Picking one in the menu replaces both colour
+     grids with a single <em>Camo scheme</em> row. They need an
+     <a href="paintmod.html#kits">Advanced Paint Kit</a> to apply.</p>
+  <p>What you collect is the <strong>combination</strong>. A Military Paint Can
+     teaches exactly what is printed on its label &mdash; one pattern in one
+     scheme. &ldquo;Thicket in Autumn&rdquo; tells you nothing about
+     &ldquo;Tiger in Autumn&rdquo;.</p>
+
+  <div class="controls">
+    <div class="row">
+      <label for="patFilter">Pattern</label>
+      <select id="patFilter">
+        <option value="">All patterns</option>
+      </select>
+      <label for="schemeFilter">Scheme</label>
+      <select id="schemeFilter">
+        <option value="">All schemes</option>
+      </select>
+      <label for="obtFilter">Availability</label>
+      <select id="obtFilter">
+        <option value="">Everything</option>
+        <option value="1">Obtainable now</option>
+        <option value="0">Held back</option>
+      </select>
+    </div>
+  </div>
+
+  <p class="muted" id="camoCount" role="status" aria-live="polite"></p>
+  <div class="tiles" id="camoTiles"></div>
+
+  <div class="note">
+    <p><strong>Six of the twelve schemes are obtainable right now:</strong> UA
+       Pixel, Woodland, Autumn, Desert, Urban and Night. UA Pixel comes with the
+       Advanced Paint Kit for all five patterns; the other five are what
+       Military Paint Cans teach &mdash; <strong>25 combinations</strong> make up
+       the collection. The remaining six schemes are built and shipped in the
+       mod but never spawn; they are held back for events and awards.</p>
+    <p><strong>Camo density adapts to the item.</strong> Unlike a stencil, each
+       advanced pattern ships three tiles &mdash; loose for small gear, tighter
+       for garments, tightest for backpacks &mdash; so the camo reads at roughly
+       the same real-world size wherever it goes. You do not choose it; the item
+       does.</p>
+  </div>
+
+  <!-- ================================================================ -->
+  <h2 id="schemes">The twelve schemes</h2>
+  <p>Each scheme is a fixed set of tones. The first is the background, the rest
+     are the shapes drawn over it.</p>
+  <div class="tbl-wrap" tabindex="0" role="region" aria-label="Scrollable table">
+    <table id="schemeTable">
+      <thead><tr><th>#</th><th>Scheme</th><th>Colours</th><th>Status</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <h2>Where to go next</h2>
+  <div class="btns">
+    <a class="btn btn-primary" href="join.html">Join the server</a>
+    <a class="btn" href="paintmod.html">How to find and use paint</a>
+    <a class="btn" href="gear.html">What you can paint</a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>[EU] BZA Chernarus 1PP &middot; 57.128.250.248:2302 &middot;
+       <a href="https://discord.gg/Rrzu4rVy3v">Discord</a> &middot;
+       <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770991635">Workshop</a></p>
+    <p class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="paintmod.html">PaintMod guide</a>
+      <a href="gear.html">Weapons &amp; gear</a>
+      <a href="join.html">How to join</a>
+    </p>
+    <p><small>Not affiliated with Bohemia Interactive.</small></p>
+  </div>
+</footer>
+
+<script src="assets/palette.js"></script>
+<script src="assets/stencils.js"></script>
+<script>
+(function () {
+  'use strict';
+  var D = window.PAINT_DATA, S = window.STENCILS;
+  // If either data file failed to load, every section below would throw on its
+  // first statement and the page would render as a set of empty grids with the
+  // controls still sitting there as though they worked. Say so instead.
+  if (!D || !D.colors || !S) {
+    var host = document.getElementById('palette');
+    if (host) host.innerHTML = '<p class="muted">The colour data could not be ' +
+      'loaded, so the palette and pattern previews on this page are missing. ' +
+      'The <a href="paintmod.html">PaintMod guide</a> describes them in words.</p>';
+    return;
+  }
+
+  // Advanced pattern indices and names, matching PaintMod_Unlocks.PatternName().
+  var CAMO = [
+    { i: 5, name: 'Pixel',  note: 'Digital blocks - the classic pixelated camo' },
+    { i: 6, name: 'Thicket', note: 'Dense multi-tone leaves, like a canopy' },
+    { i: 7, name: 'Tiger',  note: 'Tapered brush strokes on a light base' },
+    { i: 8, name: 'Blotch', note: 'Large organic woodland blobs' },
+    { i: 9, name: 'Hex',    note: 'Honeycomb grid tinted from the scheme' }
+  ];
+  // PaintMod_Unlocks.PLAYABLE_SCHEME_COUNT - schemes 0-5 spawn, 6-11 do not.
+  var PLAYABLE = 6;
+
+  var esc = function (s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  // ------------------------------------------------------------- palette ---
+  var TIER_LABEL = { base: 'Free', founder: 'Founder', granted: 'Granted' };
+  var TIER_CLASS = { base: 'free', founder: 'founder', granted: 'locked' };
+
+  document.getElementById('palette').innerHTML = D.colors.map(function (c) {
+    return '<div class="sw' + (c.tier === 'founder' ? ' is-founder' : '') + '">' +
+      '<span class="chip" style="background:' + c.hex + '"></span>' +
+      '<span class="meta">' +
+        '<span class="nm">' + esc(c.name) + '</span>' +
+        '<span class="hx">' + c.hex + '</span> ' +
+        '<span class="badge ' + TIER_CLASS[c.tier] + '">' + TIER_LABEL[c.tier] + '</span>' +
+      '</span></div>';
+  }).join('');
+
+  // ------------------------------------------------------------ stencils ---
+  var base = 0, accent = 5; // black on white reads clearly as a default
+
+  function swatchButtons(hostId, get, set) {
+    var host = document.getElementById(hostId);
+    host.innerHTML = D.colors.map(function (c) {
+      return '<button type="button" data-i="' + c.i + '" title="' + esc(c.name) + '"' +
+             ' aria-label="' + esc(c.name) + '" style="background:' + c.hex + '"></button>';
+    }).join('');
+    host.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      set(+b.dataset.i);
+      sync();
+    });
+    return host;
+  }
+
+  // Picking the accent colour as the new base would leave the pair invalid, so
+  // the two swap rather than silently dropping the visitor's accent choice.
+  var baseHost = swatchButtons('baseGrid', function () { return base; }, function (v) {
+    if (v === accent) accent = base;
+    base = v;
+  });
+  var accHost = swatchButtons('accGrid', function () { return accent; }, function (v) { accent = v; });
+
+  function mark(host, idx) {
+    Array.prototype.forEach.call(host.children, function (b) {
+      b.setAttribute('aria-pressed', +b.dataset.i === idx ? 'true' : 'false');
+    });
+  }
+
+  var tilesHost = document.getElementById('stencilTiles');
+  var bigHost = document.getElementById('stencilBig');
+  var bigName = document.getElementById('bigName');
+  var bigIdx = 2;
+
+  // Rendered once: recolouring afterwards is only two custom properties, so
+  // clicking through 47 colours never rebuilds a few thousand SVG nodes.
+  tilesHost.innerHTML = S.names.map(function (n, i) {
+    return '<button type="button" class="tile" data-p="' + i + '" aria-pressed="false"' +
+           ' style="text-align:left;padding:0;cursor:pointer;font:inherit;color:inherit">' +
+           S.svg(i) +
+           '<span class="cap"><b>' + esc(n) + '</b><span>Show tiled</span></span></button>';
+  }).join('');
+
+  tilesHost.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-p]');
+    if (!b) return;
+    bigIdx = +b.dataset.p;
+    drawBig();
+  });
+
+  function drawBig() {
+    bigHost.innerHTML = S.svg(bigIdx, { repeat: 3 });
+    bigName.textContent = S.names[bigIdx];
+    Array.prototype.forEach.call(tilesHost.children, function (el) {
+      var on = +el.dataset.p === bigIdx;
+      el.style.borderColor = on ? 'var(--accent)' : '';
+      el.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  function sync() {
+    // The generator never builds a tile where the accent equals the base - a
+    // pattern in its own colour is just a flat colour - so the accent grid
+    // greys that swatch out instead of offering a combination the game refuses.
+    Array.prototype.forEach.call(accHost.children, function (btn) {
+      var same = +btn.dataset.i === base;
+      btn.disabled = same;
+      btn.style.opacity = same ? '.25' : '';
+      btn.style.cursor = same ? 'not-allowed' : '';
+    });
+
+    var b = D.colors[base], a = D.colors[accent];
+    document.getElementById('baseName').textContent = b.name + ' ' + b.hex;
+    document.getElementById('accName').textContent = a.name + ' ' + a.hex;
+    document.documentElement.style.setProperty('--sb', b.hex);
+    document.documentElement.style.setProperty('--sa', a.hex);
+    mark(baseHost, base);
+    mark(accHost, accent);
+    drawBig();
+  }
+  sync();
+
+  // ---------------------------------------------------------------- camo ---
+  var camoHost = document.getElementById('camoTiles');
+  var patSel = document.getElementById('patFilter');
+  var schSel = document.getElementById('schemeFilter');
+  var obtSel = document.getElementById('obtFilter');
+
+  CAMO.forEach(function (p) {
+    patSel.insertAdjacentHTML('beforeend', '<option value="' + p.i + '">' + esc(p.name) + '</option>');
+  });
+  D.schemes.forEach(function (s) {
+    schSel.insertAdjacentHTML('beforeend', '<option value="' + s.i + '">' + esc(s.name) +
+      (s.i < PLAYABLE ? '' : ' (held back)') + '</option>');
+  });
+
+  function pad2(n) { return (n < 10 ? '0' : '') + n; }
+
+  function renderCamo() {
+    var fp = patSel.value, fs = schSel.value, fo = obtSel.value;
+    var out = [];
+    CAMO.forEach(function (p) {
+      if (fp && +fp !== p.i) return;
+      D.schemes.forEach(function (s) {
+        if (fs && +fs !== s.i) return;
+        var obtainable = s.i < PLAYABLE;
+        if (fo === '1' && !obtainable) return;
+        if (fo === '0' && obtainable) return;
+        // Scheme 0 ships with the Advanced Paint Kit for every pattern; 1-5 are
+        // the ones a Military Paint Can teaches, one combination at a time.
+        var how = s.i === 0 ? 'With the kit' : (obtainable ? 'From a can' : 'Held back');
+        out.push('<div class="tile">' +
+          '<img src="assets/camo/p' + p.i + '_w' + pad2(s.i) + '.png" width="256" height="256" loading="lazy"' +
+          ' alt="' + esc(p.name + ' pattern in the ' + s.name + ' scheme') + '">' +
+          '<span class="cap"><b>' + esc(p.name + ' - ' + s.name) + '</b>' +
+          '<span>' + how + '</span></span></div>');
+      });
+    });
+    camoHost.innerHTML = out.join('');
+    document.getElementById('camoCount').textContent = out.length
+      ? 'Showing ' + out.length + ' of 60 camo tiles.'
+      : 'Nothing matches that combination.';
+  }
+  [patSel, schSel, obtSel].forEach(function (el) { el.addEventListener('change', renderCamo); });
+  renderCamo();
+
+  // ------------------------------------------------------------- schemes ---
+  document.querySelector('#schemeTable tbody').innerHTML = D.schemes.map(function (s) {
+    // The hex goes in visually-hidden text, not just a title attribute: a
+    // title is unreachable by touch and by most screen readers, which would
+    // leave this whole column announcing nothing.
+    var chips = s.colors.map(function (h) {
+      return '<span style="display:inline-block;width:22px;height:22px;border-radius:3px;' +
+             'border:1px solid var(--line-2);background:' + h + '" title="' + h + '">' +
+             '<span class="visually-hidden">' + h + '</span></span>';
+    }).join(' ');
+    return '<tr><td>' + s.i + '</td><td><strong>' + esc(s.name) + '</strong></td>' +
+           '<td>' + chips + '</td><td>' +
+           (s.i === 0 ? '<span class="badge free">With the kit</span>'
+                      : s.i < PLAYABLE ? '<span class="badge">From cans</span>'
+                                       : '<span class="badge locked">Held back</span>') +
+           '</td></tr>';
+  }).join('');
+})();
+</script>
+
+</body>
+</html>

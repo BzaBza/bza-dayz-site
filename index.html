@@ -4,109 +4,66 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[EU] BZA Chernarus 1PP | Vanilla+ | PaintMod - DayZ server</title>
-<meta name="description" content="Vanilla Chernarus, first person only, EU. Loot, economy and balance untouched. The one addition is BZA PaintMod: per-part weapon and gear painting, patterns earned by finding paint cans.">
-<style>
-  :root{
-    --bg:#14150f; --panel:#1c1e16; --line:#2f3326;
-    --ink:#e8e6dc; --muted:#9a9c8c; --accent:#c8b560; --accent-dim:#8a7c3e;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  }
-  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
-  header{
-    border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg,#1b1d15,#14150f);
-    padding:56px 0 40px;
-  }
-  h1{margin:0 0 6px;font-size:clamp(1.5rem,4.5vw,2.2rem);letter-spacing:.4px}
-  h1 .eu{color:var(--accent)}
-  .tag{color:var(--muted);font-size:1rem;margin:0}
-  h2{
-    font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--accent);margin:44px 0 14px;
-  }
-  p{margin:0 0 14px}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
-  a:hover{color:#e2d08a}
-  .connect{
-    margin:26px 0 0;padding:18px 20px;background:var(--panel);
-    border:1px solid var(--line);border-radius:8px;
-  }
-  .connect .label{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}
-  .ip{
-    font:600 1.35rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    color:#fff;margin-top:4px;word-break:break-all;
-  }
-  ul{margin:0 0 14px;padding-left:20px}
-  li{margin-bottom:7px}
-  .no{color:var(--muted)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:0 0 8px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
-  .card h3{margin:0 0 6px;font-size:1rem;color:#fff}
-  .card p{margin:0;color:var(--muted);font-size:.94rem}
-  .founder{
-    display:flex;gap:18px;align-items:flex-start;
-    background:var(--panel);border:1px solid var(--line);
-    border-left:4px solid #a056f5;border-radius:8px;padding:18px 20px;
-  }
-  .founder .swatch{
-    flex:none;width:56px;height:56px;border-radius:8px;background:#a056f5;
-    box-shadow:0 0 0 1px rgba(255,255,255,.12), 0 0 22px rgba(160,86,245,.45);
-  }
-  .founder p{margin:0 0 10px}
-  .founder p:last-child{margin:0}
-  .founder code{
-    font:600 .95em ui-monospace,SFMono-Regular,Consolas,monospace;color:#c79bff;
-  }
-  .founder .fine{color:var(--muted);font-size:.9rem}
-  @media (max-width:520px){ .founder{flex-direction:column} }
-  .shots{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:16px;margin:0 0 8px;
-  }
-  .shots figure{margin:0}
-  .shots img{
-    display:block;width:100%;height:auto;border-radius:8px;
-    border:1px solid var(--line);background:var(--panel);
-  }
-  .shots figcaption{
-    color:var(--muted);font-size:.88rem;line-height:1.45;margin-top:8px;
-  }
-  /* The first shot carries the section: give it the full width on wide screens
-     so the cans and the painted rifle are actually readable. */
-  @media (min-width:620px){
-    .shots figure:first-child{grid-column:1 / -1}
-  }
-  footer{
-    margin-top:56px;border-top:1px solid var(--line);
-    padding:24px 0 48px;color:var(--muted);font-size:.9rem;
-  }
-  footer a{border-bottom-color:transparent}
-  .links a{margin-right:18px;display:inline-block}
-</style>
+<meta name="description" content="Vanilla Chernarus, first person only, hosted in Warsaw. Loot, economy and balance untouched. The one addition is BZA PaintMod: per-part weapon and gear painting, patterns earned by finding paint cans.">
+<link rel="icon" href="assets/brand/logo-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/brand/logo-180.png">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:title" content="[EU] BZA Chernarus 1PP - Vanilla+ DayZ with PaintMod">
+<meta property="og:description" content="First person only, pure vanilla loot and economy, plus the one thing you cannot get anywhere else: paint your rifle part by part and almost all of your gear.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://bzabza.github.io/bza-dayz-site/assets/brand/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
-<header>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/brand/logo-64.png" alt="" width="28" height="28">BZA <span>Chernarus 1PP</span></a>
+    <a class="link" href="index.html" aria-current="page">Home</a>
+    <a class="link" href="about.html">About</a>
+    <a class="link" href="paintmod.html">PaintMod guide</a>
+    <a class="link" href="styles.html">Colours &amp; patterns</a>
+    <a class="link" href="gear.html">Weapons &amp; gear</a>
+    <a class="link" href="join.html">How to join</a>
+  </div>
+</nav>
+
+<header class="hero">
   <div class="wrap">
     <h1><span class="eu">[EU]</span> BZA Chernarus 1PP</h1>
     <p class="tag">Vanilla+ &middot; First person only &middot; Chernarus &middot; Hosted in Warsaw, EU</p>
     <div class="connect">
-      <div class="label">Direct connect</div>
-      <div class="ip">57.128.250.248:2302</div>
+      <div>
+        <div class="label">Direct connect</div>
+        <div class="ip">57.128.250.248:2302</div>
+      </div>
+      <div>
+        <div class="label">Slots</div>
+        <div class="ip">60</div>
+      </div>
+    </div>
+    <div class="note" style="border-left-color:var(--accent);margin-bottom:0">
+      <p><strong>Launch Night: Friday 31 July, 19:30 CEST</strong>
+         (20:30 Kyiv, 17:30 UTC). The server is up and joinable now &mdash; but
+         that is the evening the map fills, and it is the fairest start on the
+         founder race, because everybody is on hour zero of the same wipe.</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-primary" href="join.html">How to join</a>
+      <a class="btn" href="https://discord.gg/Rrzu4rVy3v">Discord</a>
     </div>
   </div>
 </header>
 
+<main id="main" tabindex="-1">
 <div class="wrap">
 
   <h2>Vanilla where it matters</h2>
-  <p>Loot table, economy and balance are untouched. What you learned on any
-     other vanilla server still applies here.</p>
-  <ul class="no">
+  <p class="lede">Loot table, economy and balance are untouched. What you learned
+     on any other vanilla server still applies here.</p>
+  <ul class="muted">
     <li>No traders</li>
     <li>No kits, no starter gear, no donor gear</li>
     <li>No pay-to-win &mdash; nothing on this server is for sale</li>
@@ -115,52 +72,77 @@
   <p>If you are looking for a full 1PP vanilla server and the big ones are
      capped out, this is the same thing with room in it.</p>
 
+  <dl class="facts">
+    <div><dt>Map</dt><dd>Chernarus</dd></div>
+    <div><dt>View</dt><dd>First person only</dd></div>
+    <div><dt>Location</dt><dd>Warsaw, PL</dd></div>
+    <div><dt>Day / night</dt><dd>&times;6 / &times;24</dd></div>
+    <div><dt>Restarts</dt><dd>Every 6 h</dd></div>
+    <div><dt>Wipes</dt><dd>Every 6 weeks</dd></div>
+  </dl>
+
   <h2>The one addition is cosmetic</h2>
-  <p><strong>BZA PaintMod</strong> is our own mod. It changes how your gear
-     looks and nothing else.</p>
+  <p><strong>BZA PaintMod</strong> is our own mod, built for this server. It
+     changes how your gear looks and nothing else &mdash; no stat is touched, no
+     item is added to the loot economy that gives you an edge in a fight.</p>
   <div class="grid">
     <div class="card">
       <h3>Per-part painting</h3>
-      <p>Buttstock, handguard, receiver, magazine &mdash; each painted
-         separately. Clothing and armour too.</p>
+      <p>Buttstock, handguard, receiver, muzzle device, magazine &mdash; each
+         painted separately. Clothing and armour too.</p>
     </div>
     <div class="card">
       <h3>Patterns are earned</h3>
-      <p>Find a Pattern Paint Can, learn the pattern off its label, keep it
-         for the rest of the wipe.</p>
+      <p>Find a Pattern Paint Can, learn the stencil off its label, keep it for
+         the rest of the wipe.</p>
     </div>
     <div class="card">
       <h3>Camo is the endgame</h3>
-      <p>Military Paint Cans only spawn in Tier 3/4 military zones and at the
-         airfield. That hunt is the long goal.</p>
+      <p>Military Paint Cans come out of high-tier military, the airfield, gas
+         zones and four fixed caches. 25 combinations to collect.</p>
+    </div>
+    <div class="card">
+      <h3>Codes drop in Discord</h3>
+      <p>Events and giveaways hand out promo codes &mdash; press ESC in game,
+         type the code in, wear a colour loot cannot give you.</p>
     </div>
   </div>
-  <p>Painting is free for every player. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770991635">The mod on the Steam Workshop</a>
+  <div class="note">
+    <p><strong>What you start with:</strong> four colours and one stencil. The
+       palette runs to 47 colours and 10 patterns, but everything past that
+       four is earned &mdash; stencils from cans you find, camo from the
+       military hunt, extra colours from event codes. That is the whole point
+       of it. <a href="styles.html#colours">See the full palette and what each
+       colour costs you</a>.</p>
+  </div>
+  <div class="btns">
+    <a class="btn" href="paintmod.html">Read the guide</a>
+    <a class="btn" href="styles.html">See every colour and pattern</a>
+  </div>
+  <p>Painting is free for every player.
+     <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770991635">The mod on the Steam Workshop</a>
      &mdash; you do not need to install it by hand, the launcher pulls it when
      you join.</p>
 
   <h2>In game</h2>
   <p>All of this is from the live server. Nothing here is a render or a mockup.</p>
   <div class="shots">
-    <figure>
+    <figure class="wide">
       <img src="shots/01-paint-cans.jpg" alt="Paint cans and an advanced paint kit on the ground next to a painted rifle and helmet" loading="lazy" width="1600" height="900">
       <figcaption>Cans found in the world. Each one carries its pattern on the label.</figcaption>
     </figure>
     <figure>
-      <img src="shots/02-painting-menu.jpg" alt="The PaintMod painting menu open on a ballistic vest, showing camo schemes and pattern choices" loading="lazy" width="1600" height="900">
-      <figcaption>Pick a colour, pick a pattern you have learned, apply.</figcaption>
-    </figure>
-    <figure>
-      <img src="shots/03-per-part.jpg" alt="Inventory screen showing a KA-M with a pink stock, red receiver and blue handguard" loading="lazy" width="1600" height="900">
+      <img src="shots/03-per-part.jpg" alt="Inventory screen showing a rifle with a pink stock, red receiver and blue handguard" loading="lazy" width="1600" height="900">
       <figcaption>One rifle, three parts, three separate paint jobs.</figcaption>
-    </figure>
-    <figure>
-      <img src="shots/04-striped-rifle.jpg" alt="The same rifle model painted in a black and white stripe pattern, worn with a green pixel loadout" loading="lazy" width="1600" height="900">
-      <figcaption>Same weapon, a pattern instead of flat colour.</figcaption>
     </figure>
     <figure>
       <img src="shots/05-loadout.jpg" alt="A survivor in a fully painted winter loadout - jacket, backpack, helmet and rifle all matching" loading="lazy" width="1600" height="900">
       <figcaption>A matched loadout takes most of a wipe to put together.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/07-camo-forest.jpg" alt="A survivor in full pixel camo kneeling in a dark forest, the pattern breaking up their outline" loading="lazy" width="1600" height="900">
+      <figcaption>UA Pixel &mdash; the one scheme an Advanced Paint Kit hands
+        you outright. The other five are earned a can at a time.</figcaption>
     </figure>
     <figure>
       <img src="shots/06-colour.jpg" alt="A bright pink painted rifle held up against a sunlit Chernarus landscape" loading="lazy" width="1600" height="900">
@@ -173,14 +155,14 @@
     <div class="swatch" aria-hidden="true"></div>
     <div>
       <p><strong>The first five players to complete a full advanced pattern</strong>
-         &mdash; every earned scheme of one of them &mdash; keep an exclusive
-         colour, <code>#A056F5</code>, permanently. Nobody else on the server
-         will ever have it.</p>
+         &mdash; all five earned schemes of any one of Pixel, Thicket, Tiger,
+         Blotch or Hex &mdash; keep an exclusive colour, <code>#A056F5</code>,
+         permanently. Nobody else on the server will ever have it.</p>
       <p>It works on weapons and armour with the standard patterns, or with no
          pattern at all. It is not for sale and it never will be: the only way
          to get it is to be one of the first five to finish the collection.</p>
-      <p class="fine">Progression wipes every 6 weeks. The founder colour does
-         not &mdash; once it is yours, it stays yours across wipes.</p>
+      <p class="muted"><small>Progression wipes every 6 weeks. The founder colour does
+         not &mdash; once it is yours, it stays yours across wipes.</small></p>
     </div>
   </div>
 
@@ -188,16 +170,20 @@
   <ul>
     <li>Hosted in Warsaw &mdash; low ping across Central and Eastern Europe,
         Germany and the Nordics</li>
-    <li>Day &times;6 / night &times;4 &mdash; short but real nights</li>
-    <li>Restarts at 02:00, 08:00, 14:00 and 20:00 (Kyiv time, UTC+3) &mdash;
-        loot respawns, so joining right after one is worth it</li>
-    <li>Wipes every 6 weeks</li>
+    <li>Daytime runs at &times;6, nights at &times;24 &mdash; short, but real
+        nights, and you will need a light source</li>
+    <li>Restarts at 02:00, 08:00, 14:00 and 20:00 Kyiv time
+        &mdash; 01:00, 07:00, 13:00 and 19:00 CEST. Town loot carries over;
+        what re-rolls at restart is the four
+        <a href="paintmod.html#caches">paint caches</a></li>
+    <li>Wipes every 6 weeks, announced in Discord beforehand</li>
   </ul>
 
   <h2>Community</h2>
   <p>Everything happens on <a href="https://discord.gg/Rrzu4rVy3v">our Discord</a>
-     &mdash; announcements, wipe dates, paint jobs players show off, and the
-     fastest way to reach an admin.</p>
+     &mdash; announcements, wipe dates, paint jobs players show off, promo codes,
+     and the fastest way to reach an admin. English is the server language;
+     Ukrainian is spoken in Discord too.</p>
 
   <h2>Vote for the server</h2>
   <p>Votes are the only thing that moves a server up these lists, and they are
@@ -208,15 +194,23 @@
   </p>
 
 </div>
+</main>
 
 <footer>
   <div class="wrap">
     <p>[EU] BZA Chernarus 1PP &middot; 57.128.250.248:2302 &middot;
        <a href="https://discord.gg/Rrzu4rVy3v">Discord</a> &middot;
        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770991635">Workshop</a></p>
-    <p>Listed on <a href="https://www.trackyserver.com/dayz-server/country/PL">Dayz servers list</a>
+    <p class="links">
+      <a href="about.html">About</a>
+      <a href="paintmod.html">PaintMod guide</a>
+      <a href="styles.html">Colours &amp; patterns</a>
+      <a href="gear.html">Weapons &amp; gear</a>
+      <a href="join.html">How to join</a>
+    </p>
+    <p><small>Listed on <a href="https://www.trackyserver.com/dayz-server/country/PL">Dayz servers list</a>
        and <a href="https://dayz-servers.org/">dayz-servers.org</a>.
-       Not affiliated with Bohemia Interactive.</p>
+       Not affiliated with Bohemia Interactive.</small></p>
   </div>
 </footer>
 
